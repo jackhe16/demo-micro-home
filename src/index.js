@@ -1,14 +1,22 @@
+import microApp from '@micro-zoe/micro-app';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
-import App from './App';
+import { MyPage } from './my-page';
 import reportWebVitals from './reportWebVitals';
+
+microApp.start();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/eam" element={<MyPage />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
